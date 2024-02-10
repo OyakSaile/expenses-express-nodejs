@@ -1,22 +1,22 @@
-import { Request, Response } from "express";
-import { UserService } from "./user.service";
+import { Request, Response } from 'express'
+import { UserService } from './user.service'
 export class UserController {
-  constructor(private userService: UserService) {}
+	constructor(private userService: UserService) {}
 
-  async create(request: Request, response: Response) {
-    const data = request.body;
-    console.log(data);
+	async create(request: Request, response: Response) {
+		const data = request.body
+		console.log(data)
 
-    await this.userService.create(data);
+		await this.userService.create(data)
 
-    response.status(201).json();
-  }
+		response.status(201).json()
+	}
 
-  async findByEmail(request: Request, response: Response) {
-    const { email } = request.params;
+	async findByEmail(request: Request, response: Response) {
+		const { email } = request.params
 
-    const user = await this.userService.findByEmail(email);
+		const user = await this.userService.findByEmail(email)
 
-    response.status(200).json(user);
-  }
+		response.status(200).json(user)
+	}
 }

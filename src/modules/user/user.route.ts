@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { userController } from ".";
+import { Router } from 'express'
+import { userController } from '.'
 
-export const userRouter = Router();
+export const userRouter = Router()
 
-userRouter.get("/user/:email", userController.findByEmail.bind(userController));
-userRouter.post("/user/", userController.create.bind(userController));
+userRouter.get('/user/:email', userController.findByEmail.bind(userController))
+userRouter.post('/user/', userController.create.bind(userController))

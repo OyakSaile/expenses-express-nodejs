@@ -1,14 +1,14 @@
-import { Router } from "express";
-import { userRouter } from "./modules/user/user.route";
+import { Router } from 'express'
+import { userRouter } from './modules/user/user.route'
 
-const privateRoutes = Router();
-const publicRoutes = Router();
+const privateRoutes = Router()
+const publicRoutes = Router()
 
-privateRoutes.use(userRouter);
+privateRoutes.use(userRouter)
 
 const routes = {
-  privateRoutes,
-  publicRoutes,
-};
+	privateRoutes,
+	publicRoutes,
+}
 
-export default routes;
+export default routes
