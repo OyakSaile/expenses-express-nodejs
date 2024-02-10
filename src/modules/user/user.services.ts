@@ -1,9 +1,9 @@
 import { randomUUID } from 'crypto'
 import { CreateUserDTO } from './dtos/createUser.dto'
-import { User } from './dtos/user.dto'
 import { IUserRepository } from './repositories/IUserRepository'
 import { BadRequestError, NotFoundError } from '@/helpers/api-errors'
 import { hash } from 'bcrypt'
+import { User } from '@/common/models/user/user.model'
 export class UserService {
 	constructor(private userRepository: IUserRepository) {}
 

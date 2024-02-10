@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
-import { User } from './dtos/user.dto'
 import { IUserRepository } from './repositories/IUserRepository'
+import { User } from '@/common/models/user/user.model'
 
 export class UserRepository implements IUserRepository {
 	constructor(private database: PrismaClient) {}
