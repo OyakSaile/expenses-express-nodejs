@@ -3,6 +3,5 @@ import { userController } from ".";
 
 export const userRouter = Router();
 
-userRouter.use("/user", (req, res) => {
-  return userController.create(req, res);
-});
+userRouter.get("/user/:email", userController.findByEmail.bind(userController));
+userRouter.post("/user/", userController.create.bind(userController));

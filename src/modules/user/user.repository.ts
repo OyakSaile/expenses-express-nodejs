@@ -1,11 +1,15 @@
+import { PrismaClient } from "@prisma/client";
 import { User } from "./dtos/user.dto";
 import { IUserRepository } from "./repositories/IUserRepository";
+import { CreateUserDTO } from "./dtos/createUser.dto";
 
 export class UserRepository implements IUserRepository {
-  findByEmail(email: string): Promise<User> {
-    throw new Error("Method not implemented.");
+  constructor(private database: PrismaClient) {}
+  findByEmail(email: string): Promise<User | null> {
+    return this.database.user.findUnique({ where: { email } });
   }
-  create(user: User): Promise<void> {
-    throw new Error("Method not implemented.");
+
+  async create(data: User) {
+    await this.database.user.create({ data });
   }
 }
