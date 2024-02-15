@@ -5,7 +5,6 @@ export class UserController {
 
 	async create(request: Request, response: Response) {
 		const data = request.body
-		console.log(data)
 
 		await this.userService.create(data)
 
